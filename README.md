@@ -11,4 +11,7 @@ pip install -r requirements.txt
 ```
 
 ### Lancement :
-Pour lancer le code, il suffit d'exécuter le notebook ```detect-fake-news.ipynb```.
+Pour lancer le code, il suffit d'exécuter le notebook ```src/detect-fake-news.ipynb```.
+
+## Architecture de classes :
+L'architecture de classes de notre projet est décrite dans la figure (mettre la figure).
