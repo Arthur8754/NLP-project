@@ -1,6 +1,7 @@
 from src.features.tokenization import tokenization
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tag import pos_tag
+import spacy
 
 class tweetLevel:
     """ 
@@ -39,4 +40,16 @@ class tweetLevel:
         tokenizer = tokenization()
         tokenized_tweet = tokenizer.tokenize_tweet(tweet)
         return pos_tag(tokenized_tweet)
+    
+    def get_entity_types(self, tweet):
+        """ 
+        Donne les entités contenues dans le tweet, s'il y en a. 
+        """
+        entities = []
+        nlp = spacy.load("en_core_web_sm")
+        analyzed_tweet = nlp(tweet)
+        for entity in analyzed_tweet.ents:
+            entities.append((entity.text,entity.label_))
+        return entities
+
 
