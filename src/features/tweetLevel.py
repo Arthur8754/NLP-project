@@ -1,5 +1,6 @@
 from src.features.tokenization import tokenization
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.tag import pos_tag
 
 class tweetLevel:
     """ 
@@ -29,3 +30,13 @@ class tweetLevel:
         analyzer = SentimentIntensityAnalyzer()
         scores = analyzer.polarity_scores(tweet)
         return scores["pos"]
+    
+    def get_pos_tags(self, tweet):
+        """ 
+        Donne les POS tags de chaque token du tweet passé en paramètre.
+        """
+        # Tokenisation du tweet
+        tokenizer = tokenization()
+        tokenized_tweet = tokenizer.tokenize_tweet(tweet)
+        return pos_tag(tokenized_tweet)
+
