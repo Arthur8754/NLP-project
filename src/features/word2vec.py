@@ -31,5 +31,5 @@ class word2vec:
         # Word2vec representation
         word2vec_tweet = []
         for word in tokenized_tweet:
-            word2vec_tweet.append(self.model.wv[word])
+            word2vec_tweet.append((word,self.model.wv[word]))
         return word2vec_tweet

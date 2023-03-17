@@ -43,12 +43,13 @@ class tweetLevel:
         # POS tagging
         return pos_tag(tokenized_tweet)
     
-    def get_entity_types(self, tweet):
+    def get_entity_types(self, tweet, nlp):
         """ 
         Donne les entités contenues dans le tweet, s'il y en a. 
+        - tweet : le contenu du tweet ;
+        - nlp : l'analyseur du tweet
         """
         entities = []
-        nlp = spacy.load("en_core_web_sm")
         analyzed_tweet = nlp(tweet)
         for entity in analyzed_tweet.ents:
             entities.append((entity.text,entity.label_))
