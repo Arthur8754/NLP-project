@@ -39,6 +39,8 @@ class tweetLevel:
         # Tokenisation du tweet
         tokenizer = tokenization()
         tokenized_tweet = tokenizer.tokenize_tweet(tweet)
+
+        # POS tagging
         return pos_tag(tokenized_tweet)
     
     def get_entity_types(self, tweet):
@@ -51,5 +53,3 @@ class tweetLevel:
         for entity in analyzed_tweet.ents:
             entities.append((entity.text,entity.label_))
         return entities
-
-
