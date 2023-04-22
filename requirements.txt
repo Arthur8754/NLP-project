@@ -3,3 +3,7 @@ numpy
 nltk
 spacy
 gensim
+sklearn
+nltk
+emot
+bs4
