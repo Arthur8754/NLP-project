@@ -7,3 +7,7 @@ sklearn
 nltk
 emot
 bs4
+tensorflow
+tensorflow_hub
+tensorflow_text
+tf-models-official
